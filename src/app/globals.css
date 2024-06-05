@@ -1,0 +1,65 @@
+@import url(../assets/fonts/stylesheet.css);
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+@layer base {
+  html {
+    font-family: 'Satoshi', system-ui, sans-serif;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  h1 {
+    @apply text-6xl;
+    font-family: 'Integral CF'
+  }
+
+  h2 {
+    @apply text-5xl;
+    @apply font-bold;
+    font-family: 'Integral CF'
+  }
+
+
+
+}
+
+.slick-slide {
+  @apply opacity-10;
+  @apply text-black;
+  @apply text-opacity-60;
+}
+
+.slick-slide.slick-active {
+  @apply opacity-100;
+  @apply text-opacity-100;
+}
+
+.slick-prev {
+  left: unset;
+}
