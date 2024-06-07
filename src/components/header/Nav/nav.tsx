@@ -1,12 +1,16 @@
 import Link from "next/link";
-import { FunctionComponent } from "react";
+import { FunctionComponent, useEffect, useState } from "react";
 
-interface NavProps {}
+interface NavProps {
+  className?: string;
+  id?: string;
+  isShow?: boolean;
+}
 
-const Nav: FunctionComponent<NavProps> = () => {
+const Nav: FunctionComponent<NavProps> = ({ className, id }) => {
   return (
-    <nav>
-      <ul className="flex">
+    <nav className={className} id={id}>
+      <ul className="flex container lg:w-max mx-auto ">
         <li className="mx-3">
           <Link href="#">Shop</Link>
         </li>

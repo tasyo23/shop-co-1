@@ -2,10 +2,8 @@
 import { getReviews } from "@/services/reviews-service";
 import { Review } from "@/types/review";
 import { FunctionComponent, useEffect, useRef, useState } from "react";
-import Slider from "react-slick";
+import Slider, { Settings } from "react-slick";
 import Loader from "../../loader/loader";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
 import ReviewItem from "./review-item";
 import NextArrow from "@/components/arrows/next-arrow";
 import PrevArrow from "@/components/arrows/prev-arrow";
@@ -32,6 +30,33 @@ const OurCostumers: FunctionComponent<OurCostumersProps> = ({ className }) => {
         setLoading(false);
       });
   }, []);
+  const settingsSlick: Settings = {
+    className: "center",
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    infinite: true,
+    centerMode: true,
+    swipeToSlide: true,
+    variableWidth: true,
+    autoplay: true,
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          centerMode: false,
+        },
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+        },
+      },
+    ],
+  };
 
   if (!mount) return <Loader />;
   return (
@@ -53,18 +78,7 @@ const OurCostumers: FunctionComponent<OurCostumersProps> = ({ className }) => {
         </div>
       </div>
       <div className="">
-        <Slider
-          ref={slider}
-          className="center"
-          slidesToShow={3}
-          slidesToScroll={1}
-          infinite={true}
-          centerMode={true}
-          swipeToSlide={true}
-          variableWidth={true}
-          autoplay={true}
-          arrows={true}
-        >
+        <Slider ref={slider} {...settingsSlick}>
           {reviews?.map((review) => (
             <ReviewItem key={review.id} review={review} isShowDate={false} />
           ))}

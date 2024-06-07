@@ -13,7 +13,7 @@ const ReviewItem: FunctionComponent<ReviewItemProps> = ({
 }) => {
   return (
     <div
-      className="border rounded-2.5xl py-7 px-8 w-400 xl:w-[500px!important] h-[240px] mx-[10px]"
+      className="border rounded-2.5xl p-6 lg:py-7 lg:px-8 w-[358px] h-[186px] lg:w-[400px!important]  2xl:w-[500px!important] lg:h-[240px] mx-[10px] overflow-clip"
       key={review.id}
     >
       <Rating count={review.rating} className="mb-4" />
@@ -32,7 +32,9 @@ const ReviewItem: FunctionComponent<ReviewItemProps> = ({
           />
         </svg>
       </p>
-      <div className="text-black text-opacity-60">{review.reviewText}</div>
+      <div className="text-black text-opacity-60 text-sm lg:text-base">
+        {review.reviewText}
+      </div>
       {isShowDate && <p>Posted on {review.reviewDate.toDateString()}</p>}
     </div>
   );

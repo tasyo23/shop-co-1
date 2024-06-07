@@ -4,17 +4,30 @@ import Image from "next/image";
 
 interface ProductItemProps {
   product: Product;
+  imageClassName?: string;
+  className?: string;
 }
 
-const ProductItem: FunctionComponent<ProductItemProps> = ({ product }) => {
+const ProductItem: FunctionComponent<ProductItemProps> = ({
+  product,
+  imageClassName,
+  className,
+}) => {
   const img = product.images[0].replace(/\*|\[|\]|\"|\$/g, "");
-  //   console.log(img);
   return (
-    <div>
-      <div className="rounded-2.5xl overflow-hidden mb-3">
-        <Image src={img} width={500} height={500} alt="Picture of the author" />
+    <div className={`mx-[10px] ${className}`}>
+      <div
+        className={`rounded-2.5xl overflow-hidden mb-3 ${imageClassName} bg-grey-2`}
+      >
+        <Image
+          src={img}
+          width={500}
+          height={500}
+          alt="Picture of the author"
+          className="max-h-full max-w-full object-cover"
+        />
       </div>
-      <p className="text-lg font-bold mb-2 text-nowrap overflow-hidden text-ellipsis">
+      <p className="text-base lg:text-lg font-bold mb-2 text-nowrap overflow-hidden text-ellipsis ">
         {product.title}
       </p>
       <div className="flex">
@@ -80,9 +93,9 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({ product }) => {
             />
           </svg>
         </span>
-        <span className="ml-3">4.5/5</span>
+        <span className="ml-3 text-sm">4.5/5</span>
       </div>
-      <p className="text-xl font-bold">
+      <p className="text-lg lg:text-xl font-bold">
         <span> ${product.price}</span>
         {product.price < 260 && (
           <span className="ml-3 text-black text-opacity-40 line-through">

@@ -10,14 +10,15 @@ interface ProductsTopSellingProps {}
 
 const ProductsTopSelling: FunctionComponent<ProductsTopSellingProps> = () => {
   const [mount, setMount] = useState(false);
-  const [products, setProducts] = useState<Product[] | null>([]);
+  const [products, setProducts] = useState<Product[] | null>(null);
   const [loading, setLoading] = useState(false);
 
   const width = typeof window == "undefined" ? 0 : window.innerWidth;
   function getCount(width: number) {
     if (width >= 1536) return 5;
     if (width < 1536 && width >= 1280) return 4;
-    return 0;
+    if (width < 1280 && width >= 1024) return 3;
+    return 10;
   }
   useEffect(() => {
     setMount(true);
@@ -35,7 +36,7 @@ const ProductsTopSelling: FunctionComponent<ProductsTopSellingProps> = () => {
   if (products == null) return <></>;
 
   return (
-    <div className="pt-48 pb-16">
+    <div className="pt-10  lg:pt-28 xl:pt-48 pb-16">
       <div className="container mx-auto">
         <h2 className="text-center mb-14">top selling</h2>
         {loading ? (

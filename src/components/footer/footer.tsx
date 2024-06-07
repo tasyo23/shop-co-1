@@ -1,13 +1,19 @@
 import { FunctionComponent } from "react";
 import SubscribeForm from "./subscribe-form";
 import Link from "next/link";
+import Image from "next/image";
+import google from "../../assets/images/G Pay.png";
+import visa from "@/assets/images/Visa.png";
+import master from "@/assets/images/Mastercard.png";
+import paypal from "@/assets/images/Paypal.png";
+import applepay from "@/assets/images/applePay.png";
 
 interface FooterProps {}
 
 const Footer: FunctionComponent<FooterProps> = () => {
   return (
     <footer className="bg-grey relative mt-[170px] pt-35 pb-[82px]">
-      <SubscribeForm className="absolute 2xl:left-[calc(50%-768px)] top-[-90px]" />
+      <SubscribeForm className="absolute lg:left-[calc(50%-512px)] xl:left-[calc(50%-640px)]  2xl:left-[calc(50%-768px)] top-[-90px]" />
       <div className="container mx-auto flex justify-between pb-12 border-b border-black border-opacity-10">
         <div className=" max-w-[248px]">
           <Link
@@ -218,6 +224,63 @@ const Footer: FunctionComponent<FooterProps> = () => {
         <p className="text-sm text-black text-opacity-60">
           Shop.co © 2000-2023, All Rights Reserved
         </p>
+        <div className="flex">
+          <a
+            href="#"
+            className="flex items-center justify-center bg-white rounded-sm border border-pay-gray w-[46px] h-[30px] ml-3"
+          >
+            <Image
+              src={visa.src}
+              alt="google"
+              width={visa.width}
+              height={visa.height}
+            />
+          </a>
+          <a
+            href="#"
+            className="flex items-center justify-center bg-white rounded-sm border border-pay-gray w-[46px] h-[30px] ml-3"
+          >
+            <Image
+              src={master.src}
+              alt="google"
+              width={master.width}
+              height={master.height}
+            />
+          </a>
+          <a
+            href="#"
+            className="flex items-center justify-center bg-white rounded-sm border border-pay-gray w-[46px] h-[30px] ml-3"
+          >
+            <Image
+              src={paypal.src}
+              alt="google"
+              width={paypal.width}
+              height={paypal.height}
+            />
+          </a>
+          <a
+            href="#"
+            className="flex items-center justify-center bg-white rounded-sm border border-pay-gray w-[46px] h-[30px] ml-3"
+          >
+            <Image
+              src={applepay.src}
+              alt="google"
+              width={applepay.width}
+              height={applepay.height}
+            />
+          </a>
+          <a
+            href="#"
+            className="flex items-center justify-center bg-white rounded-sm border border-pay-gray w-[46px] h-[30px] ml-3"
+          >
+            <Image
+              src={google.src}
+              alt="google"
+              width={google.width}
+              height={google.height}
+            />
+          </a>
+        </div>
       </div>
     </footer>
   );

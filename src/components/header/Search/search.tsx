@@ -4,7 +4,7 @@ interface SearchProps {}
 
 const Search: FunctionComponent<SearchProps> = () => {
   return (
-    <div className="flex items-center bg-grey py-3 px-4 rounded-full xl:w-[577px]">
+    <div className="flex items-center bg-grey py-3 px-4 rounded-full lg:w-[370px] xl:w-[577px]">
       <svg
         width="24"
         height="24"

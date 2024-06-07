@@ -17,8 +17,13 @@ const config: Config = {
         transparent: "transparent",
         grey: "#F0F0F0",
         "grey-1": "#F2F0F1",
+        "grey-2": "#F0EEED",
+      },
+      borderColor: {
+        "pay-gray": "#D6DCE5",
       },
       borderRadius: {
+        sm: "5.38px",
         "2.5xl": "1.25rem",
         "4xl": "2.5rem",
       },
@@ -26,6 +31,8 @@ const config: Config = {
         "17.5": "4.375rem",
         "19": "4.75rem",
         "35": "8.75rem",
+        "26": "6.5rem",
+        "29": "7.25rem",
       },
       margin: {
         "6.5": "1.625rem",
@@ -34,6 +41,10 @@ const config: Config = {
         browse: "37fr, 63fr",
         browse2: "63fr, 37fr",
       },
+      backgroundSize: {
+        "58%": "58%",
+        "70%": "70%",
+      },
     },
 
     fontSize: {
@@ -41,10 +52,11 @@ const config: Config = {
       base: ["16px", "24px"],
       lg: ["20px", "28px"],
       xl: ["24px", "32px"],
+      "1.5xl": "25.2px",
       "2xl": ["32px", "38px"],
       "3xl": ["36px", "38px"],
       "4xl": ["40px", "54px"],
-      "5xl": ["48px", "38px"],
+      "5xl": "48px",
       "6xl": ["64px", { lineHeight: "64px", fontWeight: "bold" }],
     },
   },

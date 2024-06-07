@@ -11,14 +11,15 @@ interface PopularProductsProps {}
 
 const PopularProducts: FunctionComponent<PopularProductsProps> = () => {
   const [mount, setMount] = useState(false);
-  const [products, setProducts] = useState<Product[] | null>([]);
+  const [products, setProducts] = useState<Product[] | null>(null);
   const [loading, setLoading] = useState(false);
 
   const width = typeof window == "undefined" ? 0 : window.innerWidth;
   function getCount(width: number) {
     if (width >= 1536) return 5;
     if (width < 1536 && width >= 1280) return 4;
-    return 0;
+    if (width < 1280 && width >= 1024) return 3;
+    return 10;
   }
   useEffect(() => {
     setMount(true);
@@ -36,9 +37,9 @@ const PopularProducts: FunctionComponent<PopularProductsProps> = () => {
   if (products == null) return <></>;
 
   return (
-    <div className="pt-48 pb-16 border-b">
+    <div className="pt-12 lg:pt-28 xl:pt-48 pb-10 lg:pb-16 border-b">
       <div className="container mx-auto">
-        <h2 className="text-center mb-14">NEW ARRIVALS</h2>
+        <h2 className="text-center mb-8 lg:mb-14">NEW ARRIVALS</h2>
         {loading ? (
           <Loader />
         ) : (

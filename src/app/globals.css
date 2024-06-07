@@ -35,8 +35,9 @@ body {
   }
 
   h1 {
-    @apply text-6xl;
-    font-family: 'Integral CF'
+    @apply text-3xl;
+    font-family: 'Integral CF';
+    @apply font-bold;
   }
 
   h2 {
@@ -45,6 +46,23 @@ body {
     font-family: 'Integral CF'
   }
 
+  @media screen and (min-width:1024px) {
+    h1 {
+      @apply text-5xl;
+
+    }
+  }
+
+  @media screen and (min-width:1280px) {
+    h1 {
+      @apply text-6xl;
+
+    }
+  }
+
+  .container {
+    @apply px-3;
+  }
 
 
 }
@@ -62,4 +80,8 @@ body {
 
 .slick-prev {
   left: unset;
+}
+
+.products-slider .slick-slide {
+  @apply opacity-100;
 }
