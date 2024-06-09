@@ -39,7 +39,7 @@ const OurCostumers: FunctionComponent<OurCostumersProps> = ({ className }) => {
     swipeToSlide: true,
     variableWidth: true,
     autoplay: true,
-    arrows: true,
+    arrows: false,
     responsive: [
       {
         breakpoint: 1024,
@@ -53,6 +53,7 @@ const OurCostumers: FunctionComponent<OurCostumersProps> = ({ className }) => {
         settings: {
           slidesToShow: 1,
           centerMode: true,
+          adaptiveHeight: true,
         },
       },
     ],

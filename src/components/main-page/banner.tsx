@@ -10,7 +10,7 @@ const Banner: FunctionComponent<BannerProps> = () => {
   return (
     <div className="bg-grey-1">
       <div
-        className={`container mx-auto flex justify-between items-center bg-no-repeat bg-bottom md:bg-right-bottom md:py-10  pb-[415px] lg:pt-26  lg:pb-29 bg-70% md:bg-58% lg:bg-contain `}
+        className={`container mx-auto flex justify-between items-center bg-no-repeat bg-bottom md:bg-right-bottom md:py-10  pb-[415px] pt-10 lg:pt-26  lg:pb-29 bg-full-banner md:bg-58% lg:bg-contain `}
         style={{ backgroundImage: `url(${bgImg})` }}
       >
         <div className="md:max-w-[460px]  lg:max-w-[550px] xl:max-w-[596px]">
@@ -22,31 +22,37 @@ const Banner: FunctionComponent<BannerProps> = () => {
           </p>
           <Link
             href="/products"
-            className="bg-black text-white py-4 w-[210px] flex justify-center rounded-full mt-7 mb-12"
+            className="w-full max-w-96 mx-auto md:m-0 bg-black text-white py-4 xl:w-[210px] flex justify-center rounded-full mt-7 mb-12"
           >
             Shop Now
           </Link>
           <div className="flex flex-wrap justify-center xl:justify-start xl:flex-nowrap">
             <div className="after:content-[''] flex after:block after:w-[1px] after:h-full after:bg-black after:opacity-10 after:mx-8">
               <div>
-                <p className="text-4xl font-bold">200+</p>
-                <p className="text-black text-opacity-60 -mt-1">
+                <p className="text-xl sm:text-2xl md:text-4xl  font-bold">
+                  200+
+                </p>
+                <p className="text-xs md:text-sm lg:text-base text-black text-opacity-60 -mt-1">
                   International Brands
                 </p>
               </div>
             </div>
             <div className="after:content-[''] flex after:block after:w-[1px] after:h-full after:bg-black after:opacity-10 after:mx-8">
               <div>
-                <p className="text-4xl font-bold">2,000+</p>
-                <p className="text-black text-opacity-60 -mt-1">
+                <p className="text-xl sm:text-2xl md:text-4xl font-bold">
+                  2,000+
+                </p>
+                <p className="text-xs md:text-base text-black text-opacity-60 -mt-1">
                   High-Quality Products
                 </p>
               </div>
             </div>
             <div className=" ">
               <div>
-                <p className="text-4xl font-bold">30,000+</p>
-                <p className="text-black text-opacity-60 -mt-1">
+                <p className="text-xl sm:text-2xl md:text-4xl font-bold">
+                  30,000+
+                </p>
+                <p className="text-xs md:text-base text-black text-opacity-60 -mt-1">
                   Happy Customers
                 </p>
               </div>

@@ -19,6 +19,7 @@ const ProductItems: FunctionComponent<ProductItemsProps> = ({
     slidesToScroll: 2,
     variableWidth: true,
     className: "products-slider",
+    arrows: false,
     responsive: [
       {
         breakpoint: 768,
@@ -26,8 +27,20 @@ const ProductItems: FunctionComponent<ProductItemsProps> = ({
           slidesToShow: 2,
         },
       },
+      {
+        breakpoint: 640,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
     ],
   };
+
+  const [width, setwWidth] = useState(window.innerWidth);
+  useEffect(() => {
+    setwWidth(window.innerWidth);
+  }, []);
+
   return (
     <>
       <div className="">

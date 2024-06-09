@@ -11,10 +11,12 @@ const SubscribeForm: FunctionComponent<SubscribeFormProps> = ({
     <div
       className={`container px-[24px!important] md:px-[42px!important] mx-auto bg-black flex flex-col lg:flex-row rounded-2.5xl py-9 justify-between items-center ${className}`}
     >
-      <p className={`text-4xl text-white font-bold max-w-[650px] `}>
+      <p
+        className={`text-2xl mb-8 lg:mb-0 md:text-4xl text-white font-bold max-w-[650px] `}
+      >
         STAY UPTO DATE ABOUT OUR LATEST OFFERS
       </p>
-      <div className=" md:min-w-96 2xl:w-[450px] xl:w-[350px]">
+      <div className=" w-full md:min-w-96 2xl:w-[450px] xl:w-[350px]">
         <div className="flex bg-white py-3 px-4 rounded-full mb-[14px]">
           <div className="mr-3">
             <svg

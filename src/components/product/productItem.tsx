@@ -1,6 +1,7 @@
 import { Product } from "@/types/product";
 import { FunctionComponent } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface ProductItemProps {
   product: Product;
@@ -15,7 +16,10 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
 }) => {
   const img = product.images[0].replace(/\*|\[|\]|\"|\$/g, "");
   return (
-    <div className={`mx-[10px] ${className}`}>
+    <Link
+      href={`/products/${product.id}`}
+      className={`mx-[10px] block ${className}`}
+    >
       <div
         className={`rounded-2.5xl overflow-hidden mb-3 ${imageClassName} bg-grey-2`}
       >
@@ -24,7 +28,7 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
           width={500}
           height={500}
           alt="Picture of the author"
-          className="max-h-full max-w-full object-cover"
+          className="max-h-full h-full max-w-full object-cover"
         />
       </div>
       <p className="text-base lg:text-lg font-bold mb-2 text-nowrap overflow-hidden text-ellipsis ">
@@ -103,7 +107,7 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
           </span>
         )}
       </p>
-    </div>
+    </Link>
   );
 };
 

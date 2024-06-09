@@ -12,10 +12,13 @@ interface FooterProps {}
 
 const Footer: FunctionComponent<FooterProps> = () => {
   return (
-    <footer className="bg-grey relative mt-[170px] pt-35 pb-[82px]">
-      <SubscribeForm className="absolute lg:left-[calc(50%-512px)] xl:left-[calc(50%-640px)]  2xl:left-[calc(50%-768px)] top-[-90px]" />
-      <div className="container mx-auto flex justify-between pb-12 border-b border-black border-opacity-10">
-        <div className=" max-w-[248px]">
+    <footer className="bg-grey relative mt-[225px]  lg:mt-[170px] pt-[190px] lg:pt-35  pb-[82px]">
+      <div className="absolute left-0 w-full top-[-145px] lg:top-[-90px] px-4 md:px-0">
+        <SubscribeForm className=" " />
+      </div>
+
+      <div className="container mx-auto flex flex-wrap justify-between  pb-12 border-b border-black border-opacity-10">
+        <div className="mb-6 lg:mb-0 w-full lg:max-w-[248px]">
           <Link
             href="/"
             className="font-bold font-head text-[33.45px] mb-6 block"
@@ -111,7 +114,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
             </a>
           </div>
         </div>
-        <div>
+        <div className="w-[50%] md:w-auto">
           <p className="uppercase font-medium mb-6.5 ">Company</p>
           <Link href="/about" className="block mb-4 text-black text-opacity-60">
             About
@@ -132,7 +135,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
             Career
           </Link>
         </div>
-        <div>
+        <div className="w-[50%] md:w-auto">
           <p className="uppercase font-medium mb-6.5 ">Help</p>
 
           <Link
@@ -161,7 +164,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
           </Link>
         </div>
 
-        <div>
+        <div className="w-[50%] md:w-auto">
           <p className="uppercase font-medium mb-6.5 ">FAQ</p>
 
           <Link
@@ -190,7 +193,7 @@ const Footer: FunctionComponent<FooterProps> = () => {
           </Link>
         </div>
 
-        <div>
+        <div className="w-[50%] md:w-auto">
           <p className="uppercase font-medium mb-6.5 ">Resources</p>
 
           <Link
@@ -220,8 +223,8 @@ const Footer: FunctionComponent<FooterProps> = () => {
         </div>
       </div>
 
-      <div className="flex pt-5 container mx-auto justify-between items-center">
-        <p className="text-sm text-black text-opacity-60">
+      <div className="flex flex-col md:flex-row pt-5 container mx-auto justify-between items-center">
+        <p className="text-sm text-black text-opacity-60 mb-4 md:mb-0">
           Shop.co © 2000-2023, All Rights Reserved
         </p>
         <div className="flex">

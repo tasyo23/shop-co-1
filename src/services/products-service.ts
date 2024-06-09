@@ -35,3 +35,13 @@ export async function getProductsTopselling(
     return null;
   }
 }
+
+export async function getProduct(id: number): Promise<Product | null> {
+  try {
+    const result = await api.get<Product>(`/products/${id}`);
+    return result.data;
+  } catch (e) {
+    console.log(e);
+    return null;
+  }
+}

@@ -44,10 +44,12 @@ const config: Config = {
       backgroundSize: {
         "58%": "58%",
         "70%": "70%",
+        "full-banner": "450px,100%",
       },
     },
 
     fontSize: {
+      xs: ["12px", "22px"],
       sm: ["14px", "20px"],
       base: ["16px", "24px"],
       lg: ["20px", "28px"],
