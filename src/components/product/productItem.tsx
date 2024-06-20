@@ -2,6 +2,10 @@ import { Product } from "@/types/product";
 import { FunctionComponent } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { validateImage } from "@/functions/validateImage";
+import noImage from "@/assets/images/not-found.webp";
+import ValidImage from "@/utils/valid-image";
+import Rating from "../costumers/rating";
 
 interface ProductItemProps {
   product: Product;
@@ -14,7 +18,8 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
   imageClassName,
   className,
 }) => {
-  const img = product.images[0].replace(/\*|\[|\]|\"|\$/g, "");
+  const img = validateImage(product.images[0]);
+
   return (
     <Link
       href={`/products/${product.id}`}
@@ -23,11 +28,9 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
       <div
         className={`rounded-2.5xl overflow-hidden mb-3 ${imageClassName} bg-grey-2`}
       >
-        <Image
-          src={img}
-          width={500}
-          height={500}
-          alt="Picture of the author"
+        <ValidImage
+          src={product.images[0]}
+          alt={product.title}
           className="max-h-full h-full max-w-full object-cover"
         />
       </div>
@@ -35,7 +38,7 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
         {product.title}
       </p>
       <div className="flex">
-        <span className="flex">
+        {/* <span className="flex">
           <svg
             width="19"
             height="17"
@@ -96,7 +99,8 @@ const ProductItem: FunctionComponent<ProductItemProps> = ({
               fill="#FFC633"
             />
           </svg>
-        </span>
+        </span> */}
+        <Rating count={3.5} />
         <span className="ml-3 text-sm">4.5/5</span>
       </div>
       <p className="text-lg lg:text-xl font-bold">

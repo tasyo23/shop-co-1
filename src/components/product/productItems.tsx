@@ -4,6 +4,7 @@ import { FunctionComponent, useCallback, useEffect, useState } from "react";
 import ProductItem from "./productItem";
 import { Product } from "@/types/product";
 import Slider, { Settings } from "react-slick";
+import Image from "next/image";
 
 interface ProductItemsProps {
   products: Product[];
@@ -25,10 +26,11 @@ const ProductItems: FunctionComponent<ProductItemsProps> = ({
         breakpoint: 768,
         settings: {
           slidesToShow: 2,
+          slidesToScroll: 1,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 450,
         settings: {
           slidesToShow: 1,
         },

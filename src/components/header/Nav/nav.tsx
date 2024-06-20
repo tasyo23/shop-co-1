@@ -10,17 +10,17 @@ interface NavProps {
 const Nav: FunctionComponent<NavProps> = ({ className, id }) => {
   return (
     <nav className={className} id={id}>
-      <ul className="flex container lg:w-max mx-auto ">
-        <li className="mx-3">
+      <ul className="flex flex-col lg:flex-row container lg:w-max mx-auto ">
+        <li className="mx-3 mb-3 lg:mb-0">
           <Link href="#">Shop</Link>
         </li>
-        <li className="mx-3">
+        <li className="mx-3 mb-3 lg:mb-0">
           <Link href="#">On Sale</Link>
         </li>
-        <li className="mx-3">
+        <li className="mx-3 mb-3 lg:mb-0">
           <Link href="#">New Arrivals</Link>
         </li>
-        <li className="mx-3">
+        <li className="mx-3 mb-3 lg:mb-0">
           <Link href="#">Brands</Link>
         </li>
       </ul>

@@ -1,5 +1,10 @@
+import { transform } from "next/dist/build/swc";
 import type { Config } from "tailwindcss";
 import plugin from "tailwindcss/plugin";
+
+const colors = {
+  magente: "#FF3333",
+};
 
 const config: Config = {
   content: [
@@ -28,6 +33,7 @@ const config: Config = {
         "4xl": "2.5rem",
       },
       padding: {
+        "3.5": "0.875rem",
         "17.5": "4.375rem",
         "19": "4.75rem",
         "35": "8.75rem",
@@ -45,6 +51,9 @@ const config: Config = {
         "58%": "58%",
         "70%": "70%",
         "full-banner": "450px,100%",
+      },
+      colors: {
+        ...colors,
       },
     },
 

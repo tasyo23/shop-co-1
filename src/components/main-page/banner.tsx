@@ -22,7 +22,7 @@ const Banner: FunctionComponent<BannerProps> = () => {
           </p>
           <Link
             href="/products"
-            className="w-full max-w-96 mx-auto md:m-0 bg-black text-white py-4 xl:w-[210px] flex justify-center rounded-full mt-7 mb-12"
+            className="w-full max-w-96 mx-auto md:ml-0 bg-black text-white py-4 xl:w-[210px] flex justify-center rounded-full mt-7 mb-12"
           >
             Shop Now
           </Link>

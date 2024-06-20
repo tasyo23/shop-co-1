@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Product } from "@/types/product";
 import Loader from "../loader/loader";
 import { count } from "console";
-import { getProducts } from "@/services/products-service";
+import { deleteBadProducts, getProducts } from "@/services/products-service";
 
 interface PopularProductsProps {}
 

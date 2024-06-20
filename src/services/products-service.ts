@@ -26,7 +26,7 @@ export async function getProductsTopselling(
 ): Promise<Product[] | null> {
   try {
     const result = await api.get<Array<Product>>(
-      `/products?offset=6&limit=${count}`,
+      `/products?offset=4&limit=${count}`,
       {}
     );
     return result.data;
@@ -43,5 +43,16 @@ export async function getProduct(id: number): Promise<Product | null> {
   } catch (e) {
     console.log(e);
     return null;
+  }
+}
+
+export async function deleteBadProducts(start: number, finish: number) {
+  for (let i = start; i <= finish; i++) {
+    try {
+      const result = await api.delete(`/products/${i}`);
+      console.log(result);
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
