@@ -31,7 +31,7 @@ const OurCostumers: FunctionComponent<OurCostumersProps> = ({ className }) => {
       });
   }, []);
   const settingsSlick: Settings = {
-    className: "center",
+    className: "center reviews",
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,

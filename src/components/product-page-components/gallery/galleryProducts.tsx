@@ -1,7 +1,7 @@
 "use client";
 import ValidImage from "@/utils/valid-image";
 import { FunctionComponent, useRef } from "react";
-
+import Slider, { Settings } from "react-slick";
 interface GalleryProductsProps {
   images: string[];
   className?: string;
@@ -14,19 +14,21 @@ const GalleryProducts: FunctionComponent<GalleryProductsProps> = ({
   className,
 }) => {
   const imagesRef = useRef([]);
+  const setting: Settings = {
+    vertical: true,
+    arrows: false,
+    slidesToShow: 3,
+    slidesToScroll: 2,
+    className: "lg:w-[152px] mr-[14px]",
+    draggable: true,
+    swipeToSlide: true,
+    verticalSwiping: true,
+    centerMode: false,
+  };
   return (
     <div className={`flex flex-col-reverse lg:flex-row ${className}`}>
-      <div className="mr-[14px] flex lg:flex-col justify-start">
+      {/* <div className="mr-[14px] flex lg:flex-col justify-start">
         {images.map((image, index) => (
-          // <Image
-          //   src={image}
-          //   alt={product.title}
-          //   width={152}
-          //   height={168}
-          //   key={index}
-          //   className="lg:w-[152px] lg:h-[167px] rounded-2.5xl"
-          // />
-
           <ValidImage
             className="h-[106px] w-[111px] lg:w-[152px] lg:h-[167px] rounded-2.5xl object-cover lg:mb-[14px]"
             key={`image${index}`}
@@ -34,15 +36,18 @@ const GalleryProducts: FunctionComponent<GalleryProductsProps> = ({
             alt={alt}
           />
         ))}
-      </div>
-      {/*      
-         <Image
-          src={product.images[0]}
-          alt={product.title}
-          width={444}
-          height={530}
-          className="lg:w-[444px] lg:h-[530px] rounded-2.5xl"
-        /> */}
+      </div> */}
+      <Slider {...setting}>
+        {images.map((image, index) => (
+          <ValidImage
+            className="h-[106px] w-[111px] lg:w-full lg:h-[167px] rounded-2.5xl object-cover lg:mb-[14px]"
+            key={`image${index}`}
+            src={image}
+            alt={alt}
+          />
+        ))}
+      </Slider>
+
       <ValidImage
         src={images[0]}
         alt={alt}

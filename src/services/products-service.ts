@@ -11,7 +11,7 @@ const api = axios.create({
 export async function getProducts(count = 5): Promise<Product[] | null> {
   try {
     const result = await api.get<Array<Product>>(
-      `/products?offset=0&limit=${count}`,
+      `/products?_start=0&_limit=${count}`,
       {}
     );
     return result.data;
@@ -26,7 +26,7 @@ export async function getProductsTopselling(
 ): Promise<Product[] | null> {
   try {
     const result = await api.get<Array<Product>>(
-      `/products?offset=4&limit=${count}`,
+      `/products?_start=4&_limit=${count}`,
       {}
     );
     return result.data;

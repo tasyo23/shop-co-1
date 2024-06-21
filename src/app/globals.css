@@ -78,13 +78,13 @@ body {
 
 }
 
-.slick-slide {
+.reviews .slick-slide {
   @apply opacity-10;
   @apply text-black;
   @apply text-opacity-60;
 }
 
-.slick-slide.slick-active {
+.reviews .slick-slide.slick-active {
   @apply opacity-100;
   @apply text-opacity-100;
 }
@@ -93,6 +93,6 @@ body {
   left: unset;
 }
 
-.products-slider .slick-slide {
+/* .products-slider .slick-slide {
   @apply opacity-100;
-}
+} */
