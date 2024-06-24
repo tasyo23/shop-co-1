@@ -16,7 +16,7 @@ const ReviewProduct: FunctionComponent<ReviewProductProps> = async () => {
           (451)
         </span>
       </p>
-      <div className="grid grid-cols-2 gap-5">
+      <div className="grid md:grid-cols-2 gap-5">
         {reviews?.map((review) => (
           <ReviewItem
             key={review.id}

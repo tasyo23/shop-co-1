@@ -23,26 +23,30 @@ const ProductPage: FunctionComponent<ProductPageProps> = async ({ params }) => {
   return (
     <main>
       <div className="container mx-auto mb-9">Home Shop Men T-shirts</div>
-      <div className="container mx-auto flex flex-col lg:flex-row">
+      <div className="container mx-auto flex flex-col lg:flex-row items-startl">
         <GalaryProducts
           alt={product.title}
           images={product.images}
-          className="mr-10 flex-grow-2"
+          className="lg:mr-10 flex-grow-2 items-start max-w-ful mb-[6px]"
         />
         <div className=" flex-shrink-[99] ">
-          <p className="text-4xl font-head font-bold mb-3.5">{product.title}</p>
-          <div className="flex mb-3.5">
+          <p className="text-xl lg:text-2xl xl:text-4xl font-head font-bold mb-3 lg:mb-3.5">
+            {product.title}
+          </p>
+          <div className="flex mb-3 lg:mb-3.5">
             <Rating count={4.5} />
-            <span className="ml-3 text-sm">4.5/5</span>
+            <span className="ml-3 text-sm lg:text-base">4.5/5</span>
           </div>
           <p className="mb-5 flex items-center">
-            <span className="text-2xl font-bold mr-3">{product.price}$</span>
+            <span className="xl lg:text-2xl font-bold mr-3">
+              {product.price}$
+            </span>
             {product.price < 270 && (
               <>
-                <span className="text-2xl font-bold text-black text-opacity-30 line-through mr-3">
+                <span className="xl lg:text-2xl font-bold text-black text-opacity-30 line-through mr-[10px] lg:mr-3">
                   270$
                 </span>
-                <span className="h-[34px] w-[72px] flex items-center justify-center text-magente bg-magente bg-opacity-10 rounded-full">
+                <span className="h-[31px] lg:h-[34px] w-[62px] lg:w-[72px] flex items-center justify-center text-magente bg-magente bg-opacity-10 rounded-full text-sm lg:text-base">
                   {Math.ceil(100 - (product.price / 270) * 100)}%
                 </span>
               </>
@@ -59,7 +63,7 @@ const ProductPage: FunctionComponent<ProductPageProps> = async ({ params }) => {
           />
 
           <ProductSize
-            className="py-6 border-b"
+            className="pt-6 pb-3 border-b"
             defaulttSize="Small"
             sizes={["Small", "Medium", "Large", "X-Large"]}
           />

@@ -3,6 +3,7 @@ import { CSSProperties, FunctionComponent, MouseEventHandler } from "react";
 interface NextArrowProps {
   className?: string;
   style?: CSSProperties;
+  classNameButton?: string;
   onClick?: MouseEventHandler;
 }
 
@@ -10,9 +11,14 @@ const NextArrow: FunctionComponent<NextArrowProps> = ({
   className,
   onClick,
   style,
+  classNameButton,
 }) => {
   return (
-    <button className={`${className}`} style={{ ...style }} onClick={onClick}>
+    <button
+      className={`${className} ${classNameButton} before:content-none z-10 right-0 h-full`}
+      style={{ ...style }}
+      onClick={onClick}
+    >
       <svg
         width="24"
         height="24"

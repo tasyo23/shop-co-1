@@ -16,11 +16,11 @@ const ProductSize: FunctionComponent<ProductSizeProps> = ({
   return (
     <div className={`${className}`}>
       <p className="text-black text-opacity-60 mb-4">Choose Size</p>
-      <div className="flex">
+      <div className="flex flex-wrap">
         {sizes.map((size) => (
           <label
             key={size}
-            className={`py-3 px-6 rounded-full mr-3 cursor-pointer ${
+            className={`py-3 px-6 rounded-full mr-3 cursor-pointer mb-3 ${
               currentSize == size
                 ? "bg-black text-white"
                 : "bg-grey text-black text-opacity-60"
