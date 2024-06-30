@@ -12,7 +12,7 @@ const Nav: FunctionComponent<NavProps> = ({ className, id }) => {
     <nav className={className} id={id}>
       <ul className="flex flex-col lg:flex-row container lg:w-max mx-auto ">
         <li className="mx-3 mb-3 lg:mb-0">
-          <Link href="#">Shop</Link>
+          <Link href="/shop">Shop</Link>
         </li>
         <li className="mx-3 mb-3 lg:mb-0">
           <Link href="#">On Sale</Link>
