@@ -11,17 +11,17 @@
   --background-end-rgb: 255, 255, 255;
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
   }
-}
+} */
 
 @layer base {
   html {
-    font-family: 'Satoshi', system-ui, sans-serif;
+    font-family: "Satoshi", system-ui, sans-serif;
   }
 }
 
@@ -30,40 +30,35 @@ body {
 }
 
 @layer utilities {
-
-
   .text-balance {
     text-wrap: balance;
   }
 
   h1 {
     @apply text-3xl;
-    font-family: 'Integral CF';
+    font-family: "Integral CF";
     @apply font-bold;
   }
 
   h2 {
     @apply text-2xl;
     @apply font-bold;
-    font-family: 'Integral CF'
+    font-family: "Integral CF";
   }
 
-  @media screen and (min-width:1024px) {
+  @media screen and (min-width: 1024px) {
     h1 {
       @apply text-5xl;
-
     }
 
     h2 {
       @apply text-3xl;
     }
-
   }
 
-  @media screen and (min-width:1280px) {
+  @media screen and (min-width: 1280px) {
     h1 {
       @apply text-6xl;
-
     }
 
     h2 {
@@ -74,8 +69,6 @@ body {
   .container {
     @apply px-3;
   }
-
-
 }
 
 .reviews .slick-slide {
@@ -97,9 +90,27 @@ body {
   @apply opacity-100;
 } */
 
-
 .product-thumbail .slick-current img {
   @apply border;
   @apply border-black;
   @apply rounded-2.5xl;
+}
+
+.thumb {
+  appearance: none;
+  pointer-events: none;
+
+  &::-webkit-slider-thumb {
+    appearance: none;
+    background-color: #f1f5f7;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 0 1px 1px #ced4da;
+    cursor: pointer;
+    height: 18px;
+    width: 18px;
+    margin-top: 4px;
+    pointer-events: all;
+    position: relative;
+  }
 }
